@@ -1,0 +1,34 @@
+.contact-us {
+    padding: 2rem;
+  }
+  
+  .contact-us form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-us label {
+    margin: 0.5rem 0;
+  }
+  
+  .contact-us input, .contact-us textarea {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-us button {
+    padding: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .contact-us address {
+    margin-top: 2rem;
+  }
+  
+  footer {
+    margin-top: 2rem;
+  }
+  

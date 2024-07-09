@@ -1,0 +1,21 @@
+.cart {
+    padding: 2rem;
+  }
+  
+  .cart ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart li {
+    margin: 1rem 0;
+  }
+  
+  .cart button {
+    padding: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
