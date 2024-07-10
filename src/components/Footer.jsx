@@ -5,10 +5,14 @@ function Footer() {
     <footer className="footer">
     <div className="footer-content">
       <div className="footer-logo">
-        <img src="logo.png" alt="ShipHit Logo" />
+        <img src="/logo.png" alt="ShipHit Logo" />
       </div>
       <div className="footer-info">
-        <p>Address: 1234 ShipHit Lane, Transport City, Country</p>
+        <p style={{lineHeight:"2"}}>4/262, Pillaiyar kovil Street,
+          Golden George nagar,
+          Nerkundram,
+          Chennai- 600107
+        </p>
         <p>Phone: (123) 456-7890</p>
       </div>
       <div className="footer-social">
@@ -18,7 +22,7 @@ function Footer() {
       </div>
     </div>
     <div className="footer-bottom">
-      <p>&copy; 2024 ShipHit. All rights reserved. | Terms of Service</p>
+      <p>&copy; 2024 Petti Ecom. All rights reserved. | Terms of Service</p>
     </div>
   </footer>
   )

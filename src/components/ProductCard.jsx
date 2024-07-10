@@ -1,13 +1,21 @@
-import React from 'react';
+import { useContext } from 'react';
+import CartContext from './CartContext';
 import './ProductCard.css';
 
-function ProductCard({ image, price, description }) {
+function ProductCard({ id, title, image, price, description }) {
+  const { addToCart } = useContext(CartContext);
+
+  const handleAddToCart = () => {
+    addToCart({ id, title, image, price, description });
+  };
+
   return (
     <div className="product-card">
-      <img src={image} alt={description} />
-      <p>{description}</p>
-      <p>${price}</p>
-      <button>Add to Cart</button>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p className="description">{description}</p>
+      <p className="price">${price}</p>
+      <button onClick={handleAddToCart}>Add to Cart</button>
     </div>
   );
 }

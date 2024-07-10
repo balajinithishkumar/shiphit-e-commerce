@@ -1,24 +1,47 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import CartContext from './CartContext';
 import './Cart.css';
+import { Link } from 'react-router-dom';
 
 function Cart() {
-  // Dummy data for demonstration
-  const cartItems = [
-    { id: 1, name: 'Handcraft Item 1', price: 20, quantity: 1 },
-    { id: 2, name: 'Musical Instrument 1', price: 100, quantity: 1 }
-  ];
+  const { cart, removeFromCart } = useContext(CartContext);
+
+  // Calculate total price
+  const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+
+  // Handle removing an item from cart
+  const handleRemove = (itemId) => {
+    removeFromCart(itemId);
+  };
 
   return (
     <div className="cart">
-      <h1>Cart</h1>
-      <ul>
-        {cartItems.map(item => (
-          <li key={item.id}>
-            {item.name} - ${item.price} x {item.quantity}
-          </li>
-        ))}
-      </ul>
-      <button>Proceed to Checkout</button>
+      <div className='cart_container'>
+      <h1>Your Cart</h1>
+      {cart.length === 0 ? (
+        <p>Your cart is empty.</p>
+      ) : (
+        <>
+          <ul className="cart-items">
+            {cart.map((item) => (
+              <li key={item.id} className="cart-item">
+                <img src={item.image} alt={item.description} />
+                <div className="item-details">
+                  <p className="item-description">{item.description}</p>
+                  <p className="item-price">${item.price}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className="cart-total">
+            <p>Total: ${totalPrice}</p>
+      <Link to="/checkout">
+      <button className="pay-button">Checkout</button>
+      </Link>      
+          </div>
+        </>
+      )}
+      </div>
     </div>
   );
 }

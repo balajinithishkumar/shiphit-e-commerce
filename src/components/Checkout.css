@@ -1,12 +1,29 @@
 .checkout {
-    padding: 2rem;
-  }
-  
-  .checkout button {
-    padding: 0.5rem;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
+  padding: 2rem;
+  text-align: center;
+}
+
+.checkout h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #9347D8;
+}
+
+.checkout button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.checkout button:hover {
+  background-color: #218838;
+}

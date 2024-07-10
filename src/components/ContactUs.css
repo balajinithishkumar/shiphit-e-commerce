@@ -1,34 +1,96 @@
 .contact-us {
-    padding: 2rem;
+  padding: 2rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.contact-us h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #9347D8;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto 2rem;
+}
+
+.contact-form label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #9347D8;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.international-courier-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.courier-image {
+  max-width: 50%;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 2rem;
+}
+
+.courier-text {
+  max-width: 50%;
+  text-align: left;
+}
+
+.courier-text h2 {
+  font-size: 2rem;
+  color: #9347D8;
+  margin-bottom: 1rem;
+}
+
+.courier-text p {
+  /* font-size: 1.2rem; */
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    width: 90%;
   }
-  
-  .contact-us form {
-    display: flex;
+
+  .international-courier-section {
     flex-direction: column;
+    text-align: center;
   }
-  
-  .contact-us label {
-    margin: 0.5rem 0;
+
+  .courier-image,
+  .courier-text {
+    max-width: 100%;
+    margin: 0;
   }
-  
-  .contact-us input, .contact-us textarea {
-    padding: 0.5rem;
+
+  .courier-image {
     margin-bottom: 1rem;
   }
-  
-  .contact-us button {
-    padding: 0.5rem;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .contact-us address {
-    margin-top: 2rem;
-  }
-  
-  footer {
-    margin-top: 2rem;
-  }
-  
+}

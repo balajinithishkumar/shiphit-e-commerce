@@ -12,10 +12,11 @@
   color: #9347D8;
 }
 
-.about-us p {
-  font-size: 1.2rem;
+.content {
+  font-size: 1rem;
   margin-bottom: 2rem;
   line-height: 1.6;
+  width: 70%;
 }
 
 .company-overview, .our-mission, .our-team {
@@ -27,7 +28,7 @@
 }
 
 .overview-image, .mission-image {
-  max-width: 80%;
+  max-width: 500px;
   height: auto;
   margin-top: 1rem;
   border-radius: 8px;
@@ -46,4 +47,31 @@
   .about-us p {
     font-size: 1rem;
   }
+}
+
+.company-overview {
+  display: flex;
+  justify-content: space-around;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.content-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+}
+
+.our-team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text{
+  display: flex;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }

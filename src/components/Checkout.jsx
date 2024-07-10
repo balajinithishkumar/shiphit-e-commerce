@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Checkout.css';
 
 function Checkout() {
@@ -6,16 +6,17 @@ function Checkout() {
 
   const handlePayment = () => {
     setLoading(true);
+    // Simulate payment processing delay
     setTimeout(() => {
       setLoading(false);
-      alert('Payment successful!');
-    }, 2000);
+      // Payment success can be handled here, e.g., redirect to a thank you page
+    }, 2000); // Simulate 2 seconds processing time
   };
 
   return (
     <div className="checkout">
       <h1>Checkout</h1>
-      <button onClick={handlePayment}>
+      <button onClick={handlePayment} disabled={loading}>
         {loading ? 'Processing...' : 'Pay'}
       </button>
     </div>

@@ -1,16 +1,17 @@
 .home {
   padding: 2rem;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .home h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: #9347D8;
 }
-
 .home p {
-  font-size: 1.2rem;
+  font-size: 1rem; /* Changed font size to smaller */
   margin-bottom: 1rem;
+  color: #333; /* Changed text color */
 }
 
 .home-image {
@@ -21,6 +22,10 @@
 
 .intro, .featured-products, .testimonials {
   margin-bottom: 2rem;
+}
+
+.intro h2, .featured-products h2, .testimonials h2 {
+  color: #9347D8;
 }
 
 .product-grid {
@@ -38,15 +43,29 @@
 }
 
 .product-card img {
-  max-width: 100%;
-  height: auto;
+  max-width: 100px;
+  height: 300px;
   margin-bottom: 1rem;
 }
 
+.product-description {
+  font-size: 0.9rem; /* Smaller font size for product descriptions */
+  color: #555; /* Changed text color */
+}
+
+.product-price {
+  font-weight: bold;
+  color: #9347D8; /* Changed price color to match theme */
+}
+
 .testimonials {
-  background-color: #f9f9f9;
+  background-color: #f7f7f7;
   padding: 2rem;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .testimonial {
@@ -63,3 +82,47 @@
   font-weight: bold;
 }
 
+.intro{
+  padding: 10px 0 10px 0;
+  background: #f7f7f7;
+}
+
+.intro-content{
+  display: flex;
+  justify-content: space-around;
+}
+
+.intro-text{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.intro-text p{
+  line-height: 25px;
+}
+.featured-products h2{
+  display: flex;
+  justify-content: center;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 1rem 0;
+}
+
+.shop-now-button {
+  background-color: #9347D8;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.shop-now-button:hover {
+  background-color: #7b39b2;
+}
