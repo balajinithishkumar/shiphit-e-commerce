@@ -2,6 +2,7 @@ import './ContactUs.css';
 import Footer from './Footer';
 function ContactUs() {
   return (
+    <>
     <div className="contact-us">
       <h1>Contact Us</h1>
       <form className="contact-form">
@@ -22,8 +23,9 @@ function ContactUs() {
           </p>
         </div>
       </div>
-      <Footer />
     </div>
+      <Footer />
+      </>
   );
 }
 

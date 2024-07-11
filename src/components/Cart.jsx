@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import CartContext from './CartContext';
+import Footer from './Footer';
 import './Cart.css';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +16,8 @@ function Cart() {
   };
 
   return (
-    <div className="cart">
+    <div>
+    <div className="cart" >
       <div className='cart_container'>
       <h1>Your Cart</h1>
       {cart.length === 0 ? (
@@ -42,6 +44,7 @@ function Cart() {
         </>
       )}
       </div>
+    </div>
     </div>
   );
 }

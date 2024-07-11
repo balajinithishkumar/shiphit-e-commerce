@@ -6,10 +6,10 @@ function Handcrafts() {
   const products = [
     { id: 1, 
       title:"",
-       image: '/handcraft1.png', price: 20, description: 'Experience the artistry of our Handicrafted Pots, each one a unique blend of form and function. Meticulously shaped by skilled artisans, these pots bring a touch of natural elegance to your indoor or outdoor spaces, perfect for showcasing your favorite plants or flowers' },
-    { id: 2, image: '/handcraft2.png', price: 25, description: 'Transform your surroundings with our Handicrafted Pots in Colorful Colors, vibrant hues that brighten any setting. Crafted with care and painted in a spectrum of shades, these pots not only hold your plants but also add a pop of cheerful charm to gardens, patios, or any corner of your home' },
-    { id: 3, image: '/home-product1.png', price: 30, description: 'Introducing the Brass Decorative Tree – an embodiment of beauty and cultural reverence for your home decor. Crafted with meticulous detail, this brass masterpiece captures the sacred essence of the Kalpavriksha, symbolizing prosperity and fulfillment' },
-    { id: 4, image: '/handcraft4.jpg', price: 35, description: 'Introducing our Fruits Bucket, a charming addition to your kitchen or dining area. Handicrafted from sturdy materials and designed with practicality in mind, it offers ample space for storing and displaying fresh fruits, ensuring both functionality and aesthetic appeal' }
+       image: '/handicraft1.png', price: 20, description: 'The Aranmula Kannadi, a handmade metal-alloy mirror from Aranmula, Kerala, is highly auspicious. Crafted by five artisan families, it offers a unique front surface reflection, eliminating secondary reflections. Polished for days, it reveals ones true image, a technique kept secret for generations.' },
+    { id: 2, image: '/handicraft2.png', price: 25, description: 'Explore the exotic charm of our Handcrafted Elephant collection. Adorn your space with these intricate artworks, meticulously crafted to embody the grace and majesty of elephants. Each piece showcases unique details, making it a captivating addition to your decor.' },
+    { id: 3, image: '/handicraft10.png', price: 30, description: 'Handcrafted with meticulous detail, this exquisite brass decorative tree captures the sacred essence of the Kalpavriksha, symbolizing prosperity and fulfillment. Each piece reflects the rich cultural heritage and artistry of skilled artisans' },
+    { id: 4, image: '/handicraft8.png', price: 35, description: 'We offer a variety of Indian handicrafts, including brass, metal, wooden, and antique items. As a prominent exporter, we source these goods from reliable vendors. Our products are ideal for decorating offices and homes, enhancing their look with different designs and finishes. Features include lightweight, breakage-free, and glossy surface finish' }
   ];
 
   return (
