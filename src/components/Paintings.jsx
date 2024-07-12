@@ -6,6 +6,7 @@ function Paintings() {
   const products = [
     {
       id: 1,
+      title:"Majestic Peacock Canvas",
       image: "/painting1.png",
       price: 200,
       description:
@@ -13,6 +14,7 @@ function Paintings() {
     },
     {
       id: 2,
+      title:"Sacred Spirit Art",
       image: "/painting2.png",
       price: 300,
       description:
@@ -20,6 +22,7 @@ function Paintings() {
     },
     {
       id: 3,
+      title:"Majestic Grace: Peacock Reverie",
       image: "/painting3.png",
       price: 400,
       description:
@@ -29,6 +32,7 @@ function Paintings() {
       id: 4,
       image: "/painting5.png",
       price: 500,
+      title:"Bundi Heritage Painting",
       description:
         "Bundi Palace Painting from Rajasthan, a masterpiece depicting the rich heritage of the region. Handcrafted with intricate detail, this painting captures the majestic architecture and vibrant colors of Rajasthan's royal past. Perfect for adding a touch of cultural elegance to any space.",
     },

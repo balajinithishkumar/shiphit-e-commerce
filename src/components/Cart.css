@@ -67,7 +67,7 @@ font-size: 16px !important;
 }
 
 .pay-button {
-  background-color: #28a745;
+  background-color: #9347D8;
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -75,10 +75,11 @@ font-size: 16px !important;
   cursor: pointer;
   margin-top: 1rem;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .pay-button:hover {
-  background-color: #218838;
+  background-color: #a171ce !important;
 }
 
 .remove-button {
@@ -93,3 +94,4 @@ font-size: 16px !important;
 .remove-button:hover {
   background-color: #FF4837;
 }
+

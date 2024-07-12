@@ -53,11 +53,11 @@ function Home() {
         <h2>Customer Testimonials</h2>
         <div className="testimonial">
           <p>Petti Ecom provides an amazing selection of handcrafted items. Their service is top-notch!</p>
-          <span>- Jane Doe</span>
+          <span>- Aarav</span>
         </div>
         <div className="testimonial">
           <p>I love the musical instruments I bought from Petti Ecom. Highly recommend!</p>
-          <span>- John Smith</span>
+          <span>- Priya</span>
         </div>
         </div>
       </section>

@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import CartContext from './CartContext';
 import './Checkout.css';
 
@@ -25,6 +25,15 @@ function Checkout() {
     accountNumber: '',
     ifscCode: '',
   });
+  const [deliveryDate, setDeliveryDate] = useState('');
+
+  useEffect(() => {
+    // Calculate delivery date (3 days from now)
+    const today = new Date();
+    const delivery = new Date(today);
+    delivery.setDate(today.getDate() + 3);
+    setDeliveryDate(delivery.toLocaleDateString());
+  }, []);
 
   const handlePayment = () => {
     setLoading(true);
@@ -32,15 +41,18 @@ function Checkout() {
     setTimeout(() => {
       setLoading(false);
       // Payment success can be handled here, e.g., redirect to a thank you page
-      alert('Payment successful!');
-    }, 22000); // Simulate 2 seconds processing time
+    }, 20000); // Simulate 2 seconds processing time
   };
 
-  const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+  const itemTotal = cart.reduce((total, item) => total + item.price, 0);
+  const logisticsPrice = 60.00; // Example fixed logistics price
+  const deliveryPrice = 30.00; // Example fixed delivery price
+  const totalPrice = itemTotal + logisticsPrice + deliveryPrice;
+  const savings = (itemTotal - totalPrice) / itemTotal * 100;
 
   return (
     <div className="checkout">
-      <h1>Checkout</h1>
+      <h1 className='checkout-text'>Checkout</h1>
       <div className="checkout-products">
         {cart.map((item, index) => (
           <div key={index} className="checkout-product">
@@ -51,8 +63,26 @@ function Checkout() {
             </div>
           </div>
         ))}
-        <div className="checkout-total">
-          <h3>Total: ${totalPrice.toFixed(2)}</h3>
+        <div className="checkout-prices">
+          <div className="price-row">
+            <p>Item Total:</p>
+            <p>${itemTotal.toFixed(2)}</p>
+          </div>
+          <div className="price-row">
+            <p>Logistics:</p>
+            <p>${logisticsPrice.toFixed(2)}</p>
+          </div>
+          <div className="price-row">
+            <p>Delivery:</p>
+            <p>${deliveryPrice.toFixed(2)}</p>
+          </div>
+          <div className="price-row">
+            <p>Your Savings:</p>
+            <p>{savings.toFixed(2)}%</p>
+          </div>
+          <div className="checkout-total">
+            <h3>Total: ${totalPrice.toFixed(2)}</h3>
+          </div>
         </div>
       </div>
       <div className="customer-details">
@@ -64,7 +94,7 @@ function Checkout() {
       <div className="customer-details">
         <h3>Shipping Details</h3>
         <>
-          <label>
+          <label className='checkbox'>
             <input
               type="checkbox"
               checked={shippingDetails.sameAsBilling}
@@ -81,6 +111,10 @@ function Checkout() {
             />
           )}
         </>
+      </div>
+      <div className="customer-details">
+        <h3>Estimated Delivery Date</h3>
+        <p className='deliverydate'>{deliveryDate}</p>
       </div>
       <div className="payment-method">
         <h3>Payment Method</h3>
