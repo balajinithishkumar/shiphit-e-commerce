@@ -1,31 +1,33 @@
-import { useContext, useState, useEffect } from 'react';
-import CartContext from './CartContext';
-import './Checkout.css';
+import { useContext, useState, useEffect } from "react";
+import CartContext from "./CartContext";
+import "./Checkout.css";
 
 function Checkout() {
   const { cart } = useContext(CartContext);
   const [loading, setLoading] = useState(false);
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
+  const [paymentError, setPaymentError] = useState('');
   const [billingDetails, setBillingDetails] = useState({
-    name: 'Rajesh Kumar',
-    address: '1234 Bazaar Street, Market Area, Mumbai, Maharashtra, India',
-    phone: '+91 98765 43210',
+    name: "Rajesh Kumar",
+    address: "1234 Bazaar Street, Market Area, Mumbai, Maharashtra, India",
+    phone: "+91 98765 43210",
   });
   const [shippingDetails, setShippingDetails] = useState({
     sameAsBilling: true,
-    address: '',
+    address: "",
   });
-  const [paymentMethod, setPaymentMethod] = useState('credit-card');
+  const [paymentMethod, setPaymentMethod] = useState("credit-card");
   const [cardDetails, setCardDetails] = useState({
-    cardNumber: '',
-    expiryDate: '',
-    cvv: '',
+    cardNumber: "",
+    expiryDate: "",
+    cvv: "",
   });
-  const [paypalEmail, setPaypalEmail] = useState('');
+  const [paypalEmail, setPaypalEmail] = useState("");
   const [bankDetails, setBankDetails] = useState({
-    accountNumber: '',
-    ifscCode: '',
+    accountNumber: "",
+    ifscCode: "",
   });
-  const [deliveryDate, setDeliveryDate] = useState('');
+  const [deliveryDate, setDeliveryDate] = useState("");
 
   useEffect(() => {
     // Calculate delivery date (3 days from now)
@@ -36,23 +38,41 @@ function Checkout() {
   }, []);
 
   const handlePayment = () => {
+    // Validate payment details
+    if (!validatePaymentDetails()) {
+      setPaymentError('Please fill in all required payment details.');
+      return;
+    }
     setLoading(true);
+    setPaymentError('');
+
     // Simulate payment processing delay
     setTimeout(() => {
       setLoading(false);
-      // Payment success can be handled here, e.g., redirect to a thank you page
-    }, 20000); // Simulate 2 seconds processing time
+      setPaymentSuccess(true);
+    }, 2000); // Simulate 2 seconds processing time
   };
 
+  const validatePaymentDetails = () => {
+    if (paymentMethod === 'credit-card') {
+      return cardDetails.cardNumber && cardDetails.expiryDate && cardDetails.cvv;
+    } else if (paymentMethod === 'paypal') {
+      return paypalEmail;
+    } else if (paymentMethod === 'bank-transfer') {
+      return bankDetails.accountNumber && bankDetails.ifscCode;
+    }
+    return false;
+  };
+
+  const logistic_pre = 0.40;
   const itemTotal = cart.reduce((total, item) => total + item.price, 0);
-  const logisticsPrice = 60.00; // Example fixed logistics price
-  const deliveryPrice = 30.00; // Example fixed delivery price
+  const logisticsPrice = itemTotal * logistic_pre; // 40% of item total as logistics price
+  const deliveryPrice = 30.0; // Example fixed delivery price
   const totalPrice = itemTotal + logisticsPrice + deliveryPrice;
-  const savings = (itemTotal - totalPrice) / itemTotal * 100;
 
   return (
     <div className="checkout">
-      <h1 className='checkout-text'>Checkout</h1>
+      <h1 className="checkout-text">Checkout</h1>
       <div className="checkout-products">
         {cart.map((item, index) => (
           <div key={index} className="checkout-product">
@@ -69,16 +89,12 @@ function Checkout() {
             <p>${itemTotal.toFixed(2)}</p>
           </div>
           <div className="price-row">
-            <p>Logistics:</p>
-            <p>${logisticsPrice.toFixed(2)}</p>
+            <p>Logistics (40%):</p>
+            <p>$100</p>
           </div>
           <div className="price-row">
             <p>Delivery:</p>
             <p>${deliveryPrice.toFixed(2)}</p>
-          </div>
-          <div className="price-row">
-            <p>Your Savings:</p>
-            <p>{savings.toFixed(2)}%</p>
           </div>
           <div className="checkout-total">
             <h3>Total: ${totalPrice.toFixed(2)}</h3>
@@ -93,28 +109,36 @@ function Checkout() {
       </div>
       <div className="customer-details">
         <h3>Shipping Details</h3>
-        <>
-          <label className='checkbox'>
-            <input
-              type="checkbox"
-              checked={shippingDetails.sameAsBilling}
-              onChange={(e) => setShippingDetails({ ...shippingDetails, sameAsBilling: e.target.checked })}
-            />
-            Same as billing address
-          </label>
-          {!shippingDetails.sameAsBilling && (
-            <textarea
-              style={{ width: "60%" }}
-              value={shippingDetails.address}
-              onChange={(e) => setShippingDetails({ ...shippingDetails, address: e.target.value })}
-              placeholder="Enter shipping address"
-            />
-          )}
-        </>
+        <label className="checkbox">
+          <input
+            type="checkbox"
+            checked={shippingDetails.sameAsBilling}
+            onChange={(e) =>
+              setShippingDetails({
+                ...shippingDetails,
+                sameAsBilling: e.target.checked,
+              })
+            }
+          />
+          Same as billing address
+        </label>
+        {!shippingDetails.sameAsBilling && (
+          <textarea
+            style={{ width: "60%" }}
+            value={shippingDetails.address}
+            onChange={(e) =>
+              setShippingDetails({
+                ...shippingDetails,
+                address: e.target.value,
+              })
+            }
+            placeholder="Enter shipping address"
+          />
+        )}
       </div>
       <div className="customer-details">
         <h3>Estimated Delivery Date</h3>
-        <p className='deliverydate'>{deliveryDate}</p>
+        <p className="deliverydate">{deliveryDate}</p>
       </div>
       <div className="payment-method">
         <h3>Payment Method</h3>
@@ -122,7 +146,7 @@ function Checkout() {
           <input
             type="radio"
             value="credit-card"
-            checked={paymentMethod === 'credit-card'}
+            checked={paymentMethod === "credit-card"}
             onChange={(e) => setPaymentMethod(e.target.value)}
           />
           Credit Card
@@ -131,7 +155,7 @@ function Checkout() {
           <input
             type="radio"
             value="paypal"
-            checked={paymentMethod === 'paypal'}
+            checked={paymentMethod === "paypal"}
             onChange={(e) => setPaymentMethod(e.target.value)}
           />
           PayPal
@@ -140,34 +164,40 @@ function Checkout() {
           <input
             type="radio"
             value="bank-transfer"
-            checked={paymentMethod === 'bank-transfer'}
+            checked={paymentMethod === "bank-transfer"}
             onChange={(e) => setPaymentMethod(e.target.value)}
           />
           Bank Transfer
         </label>
-        {paymentMethod === 'credit-card' && (
+        {paymentMethod === "credit-card" && (
           <div className="card-details">
             <input
               type="text"
               placeholder="Card Number"
               value={cardDetails.cardNumber}
-              onChange={(e) => setCardDetails({ ...cardDetails, cardNumber: e.target.value })}
+              onChange={(e) =>
+                setCardDetails({ ...cardDetails, cardNumber: e.target.value })
+              }
             />
             <input
               type="text"
               placeholder="Expiry Date (MM/YY)"
               value={cardDetails.expiryDate}
-              onChange={(e) => setCardDetails({ ...cardDetails, expiryDate: e.target.value })}
+              onChange={(e) =>
+                setCardDetails({ ...cardDetails, expiryDate: e.target.value })
+              }
             />
             <input
               type="text"
               placeholder="CVV"
               value={cardDetails.cvv}
-              onChange={(e) => setCardDetails({ ...cardDetails, cvv: e.target.value })}
+              onChange={(e) =>
+                setCardDetails({ ...cardDetails, cvv: e.target.value })
+              }
             />
           </div>
         )}
-        {paymentMethod === 'paypal' && (
+        {paymentMethod === "paypal" && (
           <div className="paypal-details">
             <input
               type="email"
@@ -177,25 +207,34 @@ function Checkout() {
             />
           </div>
         )}
-        {paymentMethod === 'bank-transfer' && (
+        {paymentMethod === "bank-transfer" && (
           <div className="bank-details">
             <input
               type="text"
               placeholder="Account Number"
               value={bankDetails.accountNumber}
-              onChange={(e) => setBankDetails({ ...bankDetails, accountNumber: e.target.value })}
+              onChange={(e) =>
+                setBankDetails({
+                  ...bankDetails,
+                  accountNumber: e.target.value,
+                })
+              }
             />
             <input
               type="text"
               placeholder="IFSC Code"
               value={bankDetails.ifscCode}
-              onChange={(e) => setBankDetails({ ...bankDetails, ifscCode: e.target.value })}
+              onChange={(e) =>
+                setBankDetails({ ...bankDetails, ifscCode: e.target.value })
+              }
             />
           </div>
         )}
       </div>
+      {paymentError && <p className="error">{paymentError}</p>}
+      {paymentSuccess && <p className="success">Payment Successful!</p>}
       <button onClick={handlePayment} disabled={loading}>
-        {loading ? 'Processing...' : 'Pay'}
+        {loading ? "Processing..." : "Pay"}
       </button>
     </div>
   );
