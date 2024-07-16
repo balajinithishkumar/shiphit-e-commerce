@@ -34,7 +34,8 @@ function Checkout() {
     const today = new Date();
     const delivery = new Date(today);
     delivery.setDate(today.getDate() + 3);
-    setDeliveryDate(delivery.toLocaleDateString());
+    const formattedDate = `${delivery.getDate()}/${delivery.getMonth() + 1}/${delivery.getFullYear()}`;
+    setDeliveryDate(formattedDate);
   }, []);
 
   const handlePayment = () => {
@@ -47,10 +48,11 @@ function Checkout() {
     setPaymentError('');
 
     // Simulate payment processing delay
-    setTimeout(() => {
-      setLoading(false);
-      setPaymentSuccess(true);
-    }, 2000); // Simulate 2 seconds processing time
+    // Remove the setTimeout to create an infinite processing state
+    // setTimeout(() => {
+    //   setLoading(false);
+    //   setPaymentSuccess(true);
+    // }, 2000); // Simulate 2 seconds processing time
   };
 
   const validatePaymentDetails = () => {
@@ -90,7 +92,7 @@ function Checkout() {
           </div>
           <div className="price-row">
             <p>Logistics (40%):</p>
-            <p>$100</p>
+            <p>${logisticsPrice.toFixed(2)}</p>
           </div>
           <div className="price-row">
             <p>Delivery:</p>

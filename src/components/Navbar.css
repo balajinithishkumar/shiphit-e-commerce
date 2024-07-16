@@ -1,12 +1,16 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  background-color: #eeebeb;
+  border-bottom: 1px solid rgb(238, 236, 236);
   padding: 1rem;
   align-items: center;
   position: sticky;
   top: 0;
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+  backdrop-filter: blur(3px); /* Background blur effect */
+  z-index: 1000; /* Ensure it stays on top of other content */
 }
+
 
 .logo img {
   height: 40px;

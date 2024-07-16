@@ -5,8 +5,6 @@ import Footer from "./Footer";
 function Home() {
   return (
     <div className="home">
-      {/* <h1>Welcome to Petti Ecom</h1> */}
-      {/* <p>Your one-stop shop for handcrafted items, musical instruments, paintings, and food products.</p> */}
       <img  style={{width:"100%"}} src={"/home-banner3.png"} alt="Home" className="home-image" />
       <section className="intro">
         <div className="intro-content">
@@ -67,5 +65,3 @@ function Home() {
 }
 
 export default Home;
-
-
