@@ -17,7 +17,6 @@ const AwbTracking = () => {
    
     try {
       const response = await axios.get(keys.shiphit_url);
-      console.log('Data received from Google Sheet:', response);
       setdatabase(response.data)
     } catch (error) {
       console.error('Error sending/receiving data to/from Google Sheet:', error);
@@ -26,15 +25,13 @@ const AwbTracking = () => {
 
   get();
 
-  console.log(database)
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
   };
 
   const handleAwbIdChange = (event) => {
     const awbId = event.target.value;
     const matchedData = database.find((entry) => entry.awbTrackingID === awbId);
-
     if (matchedData) {
       setFormData(matchedData);
     } else {
@@ -56,6 +53,9 @@ const AwbTracking = () => {
   useEffect(() => {
     if (formData.awbTrackingID) {
       Object.keys(formData).forEach((key) => {
+       if(key == "DateTimeStamp"){
+        setValue("update", formData.update+ " " +formData.DateTimeStamp)
+       } 
         setValue(key, formData[key]);
       });
     }
