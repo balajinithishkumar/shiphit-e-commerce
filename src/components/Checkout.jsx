@@ -68,7 +68,7 @@ function Checkout() {
 
   const logistic_pre = 0.40;
   const itemTotal = cart.reduce((total, item) => total + item.price, 0);
-  const logisticsPrice = itemTotal * logistic_pre; // 40% of item total as logistics price
+  const logisticsPrice = 100.00; // 40% of item total as logistics price
   const deliveryPrice = 30.0; // Example fixed delivery price
   const totalPrice = itemTotal + logisticsPrice + deliveryPrice;
 
@@ -91,7 +91,7 @@ function Checkout() {
             <p>${itemTotal.toFixed(2)}</p>
           </div>
           <div className="price-row">
-            <p>Logistics (40%):</p>
+            <p>Logistics:</p>
             <p>${logisticsPrice.toFixed(2)}</p>
           </div>
           <div className="price-row">

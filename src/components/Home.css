@@ -90,8 +90,11 @@
 
 .intro-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+justify-content: space-between;
+max-width: 90%;
+margin-left: auto;
+align-items: center;
+margin-right: auto;
 }
 
 .intro-image {
@@ -103,7 +106,7 @@
 .intro-text {
   width: 100%;
   max-width: 600px;
-  text-align: center;
+  text-align: start;
 }
 
 .intro-text p {
