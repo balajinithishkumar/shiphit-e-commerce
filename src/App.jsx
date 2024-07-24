@@ -1,6 +1,4 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
@@ -11,11 +9,11 @@ import MusicalInstruments from './components/MusicalInstruments';
 import Paintings from './components/Paintings';
 import FoodProducts from './components/FoodProducts';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />

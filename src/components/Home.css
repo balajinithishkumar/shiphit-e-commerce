@@ -1,5 +1,5 @@
 .home {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .home h1 {
@@ -30,7 +30,7 @@
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
 }
 
@@ -40,7 +40,6 @@
   margin: 1rem;
   text-align: left;
   width: 100%;
-  /* max-width: 300px; */
 }
 
 .product-card img {
@@ -90,11 +89,12 @@
 
 .intro-content {
   display: flex;
-justify-content: space-between;
-max-width: 90%;
-margin-left: auto;
-align-items: center;
-margin-right: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .intro-image {
@@ -106,7 +106,7 @@ margin-right: auto;
 .intro-text {
   width: 100%;
   max-width: 600px;
-  text-align: start;
+  text-align: center;
 }
 
 .intro-text p {
@@ -136,4 +136,11 @@ margin-right: auto;
 
 .shop-now-button:hover {
   background-color: #7b39b2;
+}
+
+@media (min-width: 268px) {
+  .intro-content{
+    display: flex !important;
+    gap: 40px !important;
+  }
 }

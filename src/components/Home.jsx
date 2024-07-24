@@ -5,7 +5,7 @@ import Footer from "./Footer";
 function Home() {
   return (
     <div className="home">
-      <img  style={{width:"100%"}} src={"/home-banner3.png"} alt="Home" className="home-image" />
+      <img style={{ width: "100%" }} src={"/home-banner3.png"} alt="Home" className="home-image" />
       <section className="intro">
         <div className="intro-content">
           <div className="intro-text">
@@ -14,7 +14,7 @@ function Home() {
             <p className="tagline">Discover the Artistry in Every Product</p>
             <button className="shop-now-button">Shop Now</button>
           </div>
-          <img style={{borderRadius:"3px"}} src="home-about.png" alt="About Us" className="intro-image" />
+          <img style={{ borderRadius: "3px" }} src="home-about.png" alt="About Us" className="intro-image" />
         </div>
       </section>
       <section className="featured-products">
@@ -40,7 +40,7 @@ function Home() {
           </div>
           <div className="product-card">
             <img src="indian-handicraft1.png" alt="Food Product 1" />
-           <h3>Graceful Elephants</h3>
+            <h3>Graceful Elephants</h3>
             <p className="product-description">Explore the exotic charm of our Handcrafted Elephant collection. Adorn your space with these intricate artworks, meticulously crafted to embody the grace and majesty of elephants. Each piece showcases unique details, making it a captivating addition to your decor.</p>
             <p className="product-price">$10</p>
           </div>
@@ -48,15 +48,15 @@ function Home() {
       </section>
       <section className="testimonials">
         <div>
-        <h2>Customer Testimonials</h2>
-        <div className="testimonial">
-          <p>Petti Ecom provides an amazing selection of handcrafted items. Their service is top-notch!</p>
-          <span>- Aarav</span>
-        </div>
-        <div className="testimonial">
-          <p>I love the musical instruments I bought from Petti Ecom. Highly recommend!</p>
-          <span>- Priya</span>
-        </div>
+          <h2>Customer Testimonials</h2>
+          <div className="testimonial">
+            <p>Petti Ecom provides an amazing selection of handcrafted items. Their service is top-notch!</p>
+            <span>- Aarav</span>
+          </div>
+          <div className="testimonial">
+            <p>I love the musical instruments I bought from Petti Ecom. Highly recommend!</p>
+            <span>- Priya</span>
+          </div>
         </div>
       </section>
       <Footer />
