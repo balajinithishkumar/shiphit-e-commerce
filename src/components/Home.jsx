@@ -1,9 +1,13 @@
 import './Home.css';
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import Footer from "./Footer";
+import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
 function Home() {
+  
   return (
+    <div className="">
+      <Navbar/>
     <div className="home">
       <img style={{ width: "100%" }} src={"/home-banner3.png"} alt="Home" className="home-image" />
       <section className="intro">
@@ -12,7 +16,9 @@ function Home() {
             <h2>About Petti Ecom</h2>
             <p>Welcome to Petti Ecom, your premier destination for exquisite handcrafted items, musical instruments, paintings, and gourmet food products. Our collection is a celebration of exceptional craftsmanship and cultural artistry, perfect for unique home decor or thoughtful gifts. Experience the beauty and quality of our curated selection today!</p>
             <p className="tagline">Discover the Artistry in Every Product</p>
+            <Link to="/products/handicrafts">
             <button className="shop-now-button">Shop Now</button>
+            </Link>
           </div>
           <img style={{ borderRadius: "3px" }} src="home-about.png" alt="About Us" className="intro-image" />
         </div>
@@ -60,6 +66,7 @@ function Home() {
         </div>
       </section>
       <Footer />
+    </div>
     </div>
   );
 }

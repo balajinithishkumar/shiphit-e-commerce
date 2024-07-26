@@ -5,7 +5,7 @@
 .home h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #9347D8;
+  color: #9347d8;
 }
 
 .home p {
@@ -16,16 +16,21 @@
 
 .home-image {
   max-width: 100%;
-  height: auto;
+  height: 400px;
+  margin-bottom: 2rem;
+  object-fit: contain;
+}
+
+.intro,
+.featured-products,
+.testimonials {
   margin-bottom: 2rem;
 }
 
-.intro, .featured-products, .testimonials {
-  margin-bottom: 2rem;
-}
-
-.intro h2, .featured-products h2, .testimonials h2 {
-  color: #9347D8;
+.intro h2,
+.featured-products h2,
+.testimonials h2 {
+  color: #9347d8;
 }
 
 .product-grid {
@@ -55,7 +60,7 @@
 
 .product-price {
   font-weight: bold;
-  color: #9347D8;
+  color: #9347d8;
 }
 
 .testimonials {
@@ -88,13 +93,18 @@
 }
 
 .intro-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: flex !important;
+  /* flex-direction: column; */
+  justify-content: space-between;
   align-items: center;
-  max-width: 90%;
   margin-left: auto;
   margin-right: auto;
+  max-width: 80%;
+}
+
+.intro-content img {
+  height: 300px;
+  width: 500px !important;
 }
 
 .intro-image {
@@ -106,6 +116,8 @@
 .intro-text {
   width: 100%;
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -124,7 +136,7 @@
 }
 
 .shop-now-button {
-  background-color: #9347D8;
+  background-color: #9347d8;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -138,9 +150,50 @@
   background-color: #7b39b2;
 }
 
-@media (min-width: 268px) {
-  .intro-content{
+.intro-text h2,
+.featured-products h2,
+.testimonials h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.product-grid h3 {
+  color: #9347d8 !important;
+  font-weight: 600;
+}
+
+@media (max-width: 568px) {
+  .intro-content {
     display: flex !important;
+    align-items: start !important;
+    flex-direction: column;
     gap: 40px !important;
+  }
+  .intro-text {
+    display: flex;
+    text-align: start !important;
+  }
+
+  .home {
+    padding: 0rem;
+  }
+
+  .intro {
+    display: flex;
+  }
+
+  .intro-image {
+    height: 200px !important;
+  }
+
+  .home-image {
+    height: 100px !important;
+    margin-bottom: 0;
+    object-fit: fill;
+  }
+
+  .home p{
+   margin-bottom: 3px;
   }
 }

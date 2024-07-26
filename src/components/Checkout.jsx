@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import CartContext from "./CartContext";
 import "./Checkout.css";
+import Navbar from "./Navbar";
 
 function Checkout() {
   const { cart } = useContext(CartContext);
@@ -73,6 +74,8 @@ function Checkout() {
   const totalPrice = itemTotal + logisticsPrice + deliveryPrice;
 
   return (
+    <div className="">
+      <Navbar/>
     <div className="checkout">
       <h1 className="checkout-text">Checkout</h1>
       <div className="checkout-products">
@@ -238,6 +241,7 @@ function Checkout() {
       <button onClick={handlePayment} disabled={loading}>
         {loading ? "Processing..." : "Pay"}
       </button>
+    </div>
     </div>
   );
 }

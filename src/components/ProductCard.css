@@ -10,12 +10,15 @@
 
 .products h1 {
   color: #9347d8;
+  font-size: 25px;
+  font-weight: 700;
 }
 
 .product-card img {
-  height: 300px;
-  object-fit: cover;
+  height: 305px;
+  object-fit: contain;
   margin-bottom: 1rem;
+  border-radius: 5px;
   display: block; /* Ensure the image displays properly */
   width: 100%; /* Full width to fit the card */
 }
@@ -73,10 +76,6 @@
   .intro-content img {
     width: 100%;
   }
-
-  .intro-text {
-    text-align: start;
-  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -88,8 +87,12 @@
     width: 100%; /* Full width for the image on small screens */
     margin-bottom: 1rem; /* Space between image and text */
   }
+}
 
-  .intro-text {
-    text-align: center; /* Center text on small screens */
+
+@media (min-width: 1310px) and (max-width: 1638px) {
+  .product-card {
+  width: calc(32% - 2rem);
+  
   }
 }

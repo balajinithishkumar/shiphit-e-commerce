@@ -5,6 +5,10 @@ body {
   margin: 0;
   padding: 0;
 }
+.checkout-text   {
+  font-size: 25px;
+color:#9347d8;
+font-weight: 700;}
 
 .checkout {
   max-width: 800px;
@@ -145,4 +149,28 @@ button:hover:not(:disabled) {
 .checkbox {
   display: flex;
   gap: 10px;
+}
+
+
+@media (max-width: 768px) {
+.checkout-product{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.checkout-product img {
+max-width: 100%;
+margin-bottom: 15px;
+}
+button {
+  padding: 10px !important;
+  border-radius: 5px !important;
+  background: #9347d8 !important;
+  color: white !important;
+}
+.checkout-text {
+  display: flex;
+  margin-bottom: 20px;
+  font-size: 35px;
+}
 }

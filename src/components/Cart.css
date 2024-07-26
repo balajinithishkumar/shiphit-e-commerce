@@ -4,9 +4,14 @@
   display: flex;
   justify-content: center;
 }
-.cart_container{
-  width: 60%;
+
+.cart_container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
+
 .cart h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -25,29 +30,30 @@
 
 .cart-item {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   margin-bottom: 1rem;
   border-bottom: 1px solid #ccc;
   padding-bottom: 1rem;
+  flex-wrap: wrap; /* Ensure items wrap on smaller screens */
 }
 
 .cart-item img {
-  max-width: 200px;
+  max-width: 150px;
   height: auto;
   margin-right: 1rem;
+  flex: 1 1 150px; /* Allow image to resize responsively */
 }
 
 .item-details {
-  flex: 1;
+  flex: 2 1 400px; /* Allow text to resize responsively */
   text-align: left;
   overflow: hidden; /* Ensure text doesn't overflow */
 }
 
 .item-description {
-font-size: 16px !important;
+  font-size: 16px !important;
   margin-bottom: 0.5rem;
-  width: 600px; /* Set maximum width for description */
+  width: 100%;
 }
 
 .item-price {
@@ -95,3 +101,98 @@ font-size: 16px !important;
   background-color: #FF4837;
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .cart_container {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .cart-item img {
+    max-width: 100px;
+  }
+
+  .item-details {
+    flex: 2 1 300px; /* Adjust text container size */
+  }
+
+  .cart-total p {
+    font-size: 1.3rem;
+  }
+
+  .pay-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .remove-button {
+    padding: 0.3rem 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .item-price{
+    font-size:20px !important;
+  }
+  .cart_container {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .cart-item {
+    align-items: center; /* Center items */
+  }
+
+  .cart-item img {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    max-width: 100%;
+  }
+
+  .item-details {
+    text-align: start; /* Center text on smaller screens */
+  }
+
+  .cart-total {
+    text-align: center;
+  }
+
+  .cart-total p {
+    font-size: 1.2rem;
+  }
+
+  .pay-button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .remove-button {
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart{
+    padding: 0px;
+  }
+  .cart h1 {
+    font-size: 1.5rem;
+  }
+
+  .cart p, .item-price {
+    font-size: 1rem;
+  }
+
+  .pay-button {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .remove-button {
+    width: 100%;
+    padding: 0.3rem;
+  }
+}

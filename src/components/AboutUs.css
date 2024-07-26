@@ -9,7 +9,7 @@
 .about-us h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #9347D8;
+  color: #9347d8;
 }
 
 .content {
@@ -19,7 +19,9 @@
   width: 70%;
 }
 
-.company-overview, .our-mission, .our-team {
+.company-overview,
+.our-mission,
+.our-team {
   margin-bottom: 3rem;
   padding: 2rem;
   background-color: #fff;
@@ -27,7 +29,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.overview-image, .mission-image {
+.overview-image,
+.mission-image {
   max-width: 500px;
   height: auto;
   margin-top: 1rem;
@@ -39,7 +42,7 @@
   .about-us {
     padding: 1rem;
   }
-  
+
   .about-us h2 {
     font-size: 2rem;
   }
@@ -69,9 +72,48 @@
   justify-content: center;
 }
 
-.text{
+.text {
   display: flex;
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 1281px) {
+  .company-overview {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .company-overview {
+    display: flex;
+    flex-direction: column;
+    max-width: 100% !important;
+    gap: 40px;
+  }
+
+  .overview-image,
+  .mission-image {
+    width: 100%;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .our-team {
+    display: flex;
+    justify-content: start;
+  }
+  .our-team {
+  }
+  .text{
+    display: flex;
+    text-align: start;
+    margin-right: none;
+    width: 100%;
+  }
+
 }

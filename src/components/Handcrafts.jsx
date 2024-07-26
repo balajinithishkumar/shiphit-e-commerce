@@ -1,8 +1,9 @@
 import Footer from './Footer';
 import ProductCard from './ProductCard';
 import './Products.css';
-
+import Navbar from "./Navbar"
 function Handcrafts() {
+
   const products = [
     { id: 1, 
       title:"Aranmula Kannadi Mirror",
@@ -13,6 +14,8 @@ function Handcrafts() {
   ];
 
   return (
+    <div className="">
+      <Navbar />
     <div className="products">
       <h1>Handicrafts</h1>
       <div className="product-grid">
@@ -21,6 +24,7 @@ function Handcrafts() {
         ))}
       </div>
       <Footer />
+    </div>
     </div>
   );
 }

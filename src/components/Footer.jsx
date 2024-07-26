@@ -1,11 +1,14 @@
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 import "./Footer.css"
+import { Link } from 'react-router-dom'
 function Footer() {
   return (
     <footer className="footer">
     <div className="footer-content">
       <div className="footer-logo">
+        <Link to="/">
         <img src="/logo.png" alt="ShipHit Logo" />
+        </Link>
       </div>
       <div className="footer-info">
         <p style={{lineHeight:"2"}}>4/262, Pillaiyar kovil Street,

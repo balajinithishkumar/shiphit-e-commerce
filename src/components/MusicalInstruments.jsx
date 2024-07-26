@@ -1,4 +1,5 @@
 import Footer from './Footer';
+import Navbar from './Navbar';
 import ProductCard from './ProductCard';
 import './Products.css';
 
@@ -11,6 +12,8 @@ function MusicalInstruments() {
   ];
 
   return (
+    <div className="">
+      <Navbar />
     <div className="products">
       <h1>Musical Instruments</h1>
       <div className="product-grid">
@@ -19,6 +22,7 @@ function MusicalInstruments() {
         ))}
       </div>
       <Footer />
+    </div>
     </div>
   );
 }

@@ -1,8 +1,8 @@
-import  { useContext } from 'react';
-import CartContext from './CartContext';
-import Footer from './Footer';
-import './Cart.css';
-import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import CartContext from "./CartContext";
+import "./Cart.css";
+import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
 function Cart() {
   const { cart, removeFromCart } = useContext(CartContext);
@@ -15,12 +15,11 @@ function Cart() {
     removeFromCart(itemId);
   };
 
-  console.log(cart)
-
   return (
     <div>
+      <Navbar />
       <div className="cart">
-        <div className='cart_container'>
+        <div className="cart_container">
           <h1>Your Cart</h1>
           {cart.length === 0 ? (
             <p>Your cart is empty.</p>

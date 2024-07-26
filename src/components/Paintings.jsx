@@ -1,6 +1,7 @@
 import ProductCard from "./ProductCard";
 import "./Products.css";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 function Paintings() {
   const products = [
@@ -39,6 +40,9 @@ function Paintings() {
   ];
 
   return (
+    <div className="">
+
+      <Navbar />
     <div className="products">
       <h1>Paintings</h1>
       <div className="product-grid">
@@ -48,6 +52,8 @@ function Paintings() {
       </div>
       <Footer />
     </div>
+    </div>
+
   );
 }
 
