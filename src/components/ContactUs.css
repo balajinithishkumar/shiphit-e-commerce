@@ -1,3 +1,4 @@
+/* General Styles */
 .contact-us {
   padding: 2rem;
   display: flex;
@@ -17,6 +18,7 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Contact Form Styles */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -79,6 +81,7 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* International Courier Section Styles */
 .international-courier-section {
   display: flex;
   flex-direction: column;
@@ -120,6 +123,7 @@
   color: #666;
 }
 
+/* Service Details Section Styles */
 .service-details {
   margin-top: 3rem;
   width: 100%;
@@ -156,6 +160,7 @@
   padding-left: 1rem;
 }
 
+/* FAQ Section Styles */
 .faq {
   margin-top: 3rem;
   width: 100%;
@@ -189,25 +194,18 @@
   line-height: 1.6;
 }
 
-/* New Contact Info Section Styling */
-.contact-info {
+/* Map Section Styles */
+.map-section {
   margin-top: 3rem;
   width: 100%;
-  max-width: 800px;
   text-align: center;
 }
 
-.contact-info h2 {
+.map-section h2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
   color: #5a2d81;
   font-weight: 700;
-}
-
-.contact-info p {
-  font-size: 1.1rem;
-  color: #333;
-  margin: 0.5rem 0;
 }
 
 /* Media Queries for Responsiveness */
@@ -268,7 +266,7 @@
 
   .service-details,
   .faq,
-  .contact-info {
+  .map-section {
     margin-top: 2rem;
   }
 
@@ -278,9 +276,5 @@
 
   .faq-item h3 {
     font-size: 1.1rem;
-  }
-
-  .contact-info p {
-    font-size: 1rem;
   }
 }
